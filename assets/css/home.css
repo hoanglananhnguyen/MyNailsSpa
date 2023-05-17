@@ -1,0 +1,334 @@
+@import url("global.css");
+
+
+/* Header */
+header {
+    background-color: var(--pink);
+    padding: 50px 0;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+a, a:visited, a:hover{
+    text-decoration: none;
+    font-weight: 700;
+}
+
+header a {
+    color: var(--beige);
+}
+
+footer a {
+    color: var(--green);
+}
+ 
+header nav ul li, footer nav ul li {
+    display: inline-block;
+    padding: 0 20px;
+} 
+
+/* Hero */
+.hero {
+    background-color: var(--pink);
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.logo {
+    margin: 80px 0;
+    width: 30%;
+}
+
+.hero h1 {
+    color:var(--beige);
+    font-size: 3.125rem;
+    font-weight: 700;
+    margin-bottom: 150px;
+}
+
+/* Gallery */
+
+#gallery{
+    background-color: var(--beige);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 50px;
+}
+
+.gallery-container{
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px 50px 50px;
+    background-color:var(--beige);
+}
+
+.gallery-container .h2 {
+    color: var(--green);
+    text-align: center;
+}
+
+/* Services */
+.services {
+    /* background-color: var(--pink); */
+    background-image: url("../image/services.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 100px 177px 177px 177px;
+}
+
+.services img {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services-intro h2 {
+    color: var(--beige);
+    text-align: left;
+    margin-left: -2px;
+}
+
+.dot { 
+    background-color: var(--beige);
+    height: 80px;
+    width: 200px;
+    margin-top: 30px;
+}
+    
+.text {
+    color:var(--green);
+    position: relative;
+    top: 50%;
+    text-align: center;
+    font-weight: 700;
+    line-height: 0px;  
+}
+
+.services-description {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+
+.info {
+    display:flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 50px 0;
+}
+
+.info-detail {
+    margin-right: 60px;
+    color: var(--green); 
+}
+
+.info-detail h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+/* booking form */
+.booking {
+    background-color: var(--green);
+    height: 1000px;
+    padding-top: 40px;
+}
+
+.booking-form {
+    display: flex;
+    padding: 0 180px;
+    align-items: center;
+    justify-content: space-between;;
+}
+
+.booking h2{
+    text-align: center;
+    color: var(--beige);
+}
+
+/* .booking-form .content {
+    width: 50%;
+    margin-right: 0 30px;
+} */
+
+.contact .img{
+    margin-right: 100px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+/* form */
+form h1 {
+    color: white;
+    font-size: 3.125rem;
+    font-weight: 700;
+    /* padding: 40px 0 40px 0; */
+    text-align: center;
+  }
+  
+  
+* {box-sizing: border-box}
+  
+body, html {
+    height: 100%;
+}
+  
+label{
+    color: var(--beige);
+}
+  
+/* Full-width input fields */
+input[type=text], input[type=email],
+input[type=password], input[type=date],
+input[type=time],input[type=textarea] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: var(--beige);
+}
+
+/* Add padding to container elements */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+    width: 100%;
+    }
+}
+
+/* footer style footer in header.css */
+
+.btn-reverse:hover {
+    padding: 24px 70px;
+    color: var(--green);
+    cursor: pointer;
+    background-color: var(--beige);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 20px 0;
+    width:100%
+} 
+
+.btn-reverse{
+    padding: 24px 70px;
+    color: var(--beige);
+    cursor: pointer;
+    background-color: var(--pink);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 20px 0;
+    width:100%
+} 
+
+/* output price */
+  
+.output-container{
+    width:100%;
+    height: 100vh;
+    text-align: left;
+    /* background: var(--green); */
+    color:var(--beige);
+    line-height: 1.6;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin:15px 0;
+}
+
+#output{
+    width: 100%;
+    background-color:var(--beige);
+    padding-left: 50px;
+}
+
+/* table  */
+table, td, tr {
+    color:var(--green);
+    background-color:  var(--beige); 
+    padding:20px
+    }
+    
+
+/* footer */
+footer {
+    width:100%;
+    position: relative;
+    background-color: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    /* margin-top: 50px; */
+}
+    
+ /* Slideshow container */
+ .contact{
+    width: 70%;
+    height: 100vh;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+}
+
+/* .contact img{
+    margin: 120px 120px 60px 120px;
+} */
+
+.contact .image{
+    display: none;
+}
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      
+      @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      }
+      
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
+      }
+
+
+     

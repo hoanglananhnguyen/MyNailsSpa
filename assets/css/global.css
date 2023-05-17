@@ -1,0 +1,111 @@
+
+  :root {
+    --pink:#F5ABA7;
+    --green:#73766A;
+    --grey:#E6E6E6;
+    --beige:#F6F1F0;
+    --darkgrey:#2C2E28;
+    }
+  
+  * {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      font-size: 18px;
+      font-weight: 400;
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+    }
+  
+    a, a:visited, a:hover{
+      text-decoration: none;
+      font-weight: 700;
+      display:block;
+      text-align: center;
+  }
+  
+    h2 {
+      color: var(--green); 
+      font-size: 3.125rem;
+      font-weight: 700;
+      margin: 60px;
+  } 
+  
+  p{
+      color: var(--darkgrey);
+  }
+  
+  /* Set a style for all buttons */
+.btn {
+  padding: 24px 70px;
+  color: var(--beige);
+  background-color: var(--green);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 8px 0;
+  cursor: pointer;
+  width:100%
+ } 
+
+ .btn-2 {
+    padding: 10px 40px;
+    color: var(--green);
+    border-color: var(--green);
+    border-width: 1px;
+    border-style: solid;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+  background-color: var(--pink);
+}
+
+.btn-2:hover {
+  color:var(--beige);
+  background-color: var(--green);
+}
+
+a {
+  color: var(--beige);
+  text-decoration: none;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=email],
+input[type=password], 
+input[type=date],input[type=time],
+input[type=textarea] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: var(--beige);
+}
+
+/* Add padding to container elements */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.slider-btn {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#prev, #next {
+  width: auto;
+  padding: 14px;
+  background-color: var(--beige) ;
+  margin: 5px;
+}
+

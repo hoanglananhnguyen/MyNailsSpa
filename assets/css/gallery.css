@@ -1,0 +1,73 @@
+@import url("global.css");
+@import url("header.css");
+
+html {
+  background-color: var(--beige);
+}
+
+h1 {
+  color: var(--green);
+  font-size: 3.125rem;
+  font-weight: 700;
+  position: relative;
+  margin: 40px;
+  /* bottom: 62px; */
+  text-align: center;
+}
+
+p{
+  text-align:center;
+  margin-top:30px;
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px 50px 50px;
+  background-color:var(--beige);
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+footer a, a, a:visited, a:hover{
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+  
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+}
+
+.description{
+  display: flex;
+  padding: 0 50px 30px;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  left: 20px;
+  align-items: center;
+  border-style: solid;
+  border-width: thin;
+
+}

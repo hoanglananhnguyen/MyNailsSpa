@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM - Code Creativity</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim, {makePattern} from "https://zimjs.org/cdn/01/zim_pizzazz";
+
+
+// See Docs under Frame for FIT, FILL, FULL, and TAG
+const shapesAssets = ["square.png", "almond.png"];
+const assets = ["handnude.png", "hand.png", ...shapesAssets, {src:"https://fonts.googleapis.com/css2?family=Nunito"}];
+const path = "assets/image/";
+
+new Frame(FIT, 1024, 768, "#73766A", dark, ready, assets, path);
+function ready() {
+
+  STYLE = {font:"nunito", align:CENTER};
+  let pink = "#F5ABA7";
+  let green = "#73766A";
+  let beige = "#F0E1D6";
+  let nude = "#F6F1F0";
+
+
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+    const pics = [shapesAssets];
+    const hand = new Pic ("hand.png")
+    .pos(-80,0,0,0).bot();
+
+
+    // make an array of patterns
+
+        //create pattern
+        const stripes = makePattern("stripes", series("#73766A", "#F6F1F0"), 10, 10, 20, 20);
+        const dots = makePattern("dots", series("#73766A", "#F6F1F0"), 20, 20, 10, 10);
+        const bling = makePattern("bling", series("#73766A", "#F6F1F0"), 50,40 , 30, 20);
+        const slants = makePattern("slants", series("#73766A", "#F6F1F0"), 10, 25, 25);
+        const hatch = makePattern("hatch", series("#73766A", "#F6F1F0"), 10, 20, 20);
+        const plaid = makePattern("plaid", series("#73766A", "#F6F1F0"));
+        //
+        const cols = 3;
+        const rows = 2;
+        const nailArray = [];
+        const patternArray = [stripes, dots, bling, slants, hatch, plaid];
+        loop(cols*rows, i =>{
+          const swatch=new Circle(35, white);
+          swatch.pattern = patternArray[i].clone().sca(.5).center(swatch).setMask(swatch.shape);
+          nailArray.push(swatch);
+
+        })
+
+        //square shape
+        const square = new Blob({
+          color:clear,
+          interactive:false,
+          controlType:"free", // free will be default control type (rather than "straight")
+          points:
+         [[-43.8,-32.8,0,0,-12.6,6.8,12.6,-6.8,"mirror"],[42.9,-59.6,0,0,-12,3.2,12,-3.2,"mirror"],[74.2,-46.7,0,0,-7.8,-17.4,7.8,17.4,"mirror"],[62.4,-20,0,0,13.6,-5.7,-13.6,5.7,"mirror"],[-25.9,10.2,0,0,2.8,0.2,-18.3,-1.6,"mirror"]]
+       });
+
+       const squareBig = new Blob({
+         color:"#F5ABA7",
+         interactive:false,
+         controlType:"free", // free will be default control type (rather than "straight")
+         points:
+         [[-43.8,-38.2,0,0,-9.9,10.1,4.9,-5,"mirror"],
+         [18.4,-31,0,0,-8.7,-22.7,3.9,10.3,"mirror"],
+         [1.4,119.2,0,0,15.2,-18.6,-15.2,18.6,"mirror"],
+         [-49.7,124.5,0,0,4.4,0.8,-20.9,-3.6,"mirror"],
+         [-59.8,57.3,0,0,-0.7,7,4.3,-46.7,"mirror"]]
+       });
+
+       // almond shape - blob
+        const almond = new Blob({
+          color:"#F5ABA7",
+          interactive:false,
+          controlType:"free", // free will be default control type (rather than "straight")
+          points:
+          [[-43.8,-32.8,0,0,-12.6,6.8,12.6,-6.8,"mirror"],
+          [41.9,-53.6,0,0,-37.5,8.2,37.5,-8.2,"mirror"],
+          [57.9,-20.4,0,0,31.1,-22.1,-31.1,22.1,"mirror"],
+          [-25.9,10.2,0,0,18.3,1.6,-18.3,-1.6,"mirror"]]
+        });
+
+       const almondBig = new Blob({
+         color:"#F5ABA7",
+         interactive:false,
+         controlType:"free", // free will be default control type (rather than "straight")
+         points:
+         [[-43.8,-38.2,0,0,-9.9,10.1,4.9,-5,"mirror"],
+         [18.4,-31,0,0,-8.7,-22.7,5,13.1,"mirror"],
+         [3.7,84.3,0,0,17.7,-40.6,-12.9,29.5,"mirror"],
+         [-45.4,124.5,0,0,20.9,3.6,-20.9,-3.6,"mirror"],
+         [-59.8,57.3,0,0,-0.7,7,4.3,-46.7,"mirror"]]
+      });
+
+        // set of ALMOND
+       // const nailAlmond1 = new Container().alp(0).place(); // place dung de move va xac dinh duoc loc()
+       // nailAlmond1.mouseChildren= false;
+       // nailAlmond1.shape = almond.clone().sca(.5).center(nailAlmond1);
+       // nailAlmond1.pattern = dots.clone().sca(.5).center(nailAlmond1).setMask(nailAlmond1.shape);
+
+       const nailAlmond1 = new Container().alp(0);
+       nailAlmond1.mouseChildren= false;
+       nailAlmond1.shape = almond.clone().sca(.5).center(nailAlmond1);
+       // record the rotation
+       nailAlmond1.shape.rotate = 0;
+       nailAlmond1.pattern = dots.clone().sca(.5).center(nailAlmond1).setMask(nailAlmond1.shape);
+
+
+       const nailAlmond2 = new Container().alp(0);
+       nailAlmond2.mouseChildren= false;
+       nailAlmond2.shape = almond.clone().sca(.60).rot(15).center(nailAlmond2);
+       nailAlmond2.shape.rotate = 15;
+       nailAlmond2.pattern = dots.clone().sca(.60).rot(15).center(nailAlmond2).setMask(nailAlmond2.shape);
+
+       const nailAlmond3 = new Container().alp(0);
+       nailAlmond3.mouseChildren= false;
+       nailAlmond3.shape = almond.clone().sca(.68).rot(30).center(nailAlmond3);
+       nailAlmond3.shape.rotate = 30;
+       nailAlmond3.pattern = dots.clone().sca(.68).rot(30).center(nailAlmond3).setMask(nailAlmond3.shape);
+
+       const nailAlmond4 = new Container().alp(0);
+       nailAlmond4.mouseChildren= false;
+       nailAlmond4.shape = almond.clone().sca(.70).rot(38).center(nailAlmond4);
+       nailAlmond4.shape.rotate = 38;
+       nailAlmond4.pattern = dots.clone().sca(.70).rot(38).center(nailAlmond4).setMask(nailAlmond4.shape);
+
+       const nailAlmond5 = new Container().alp(0);
+       nailAlmond5.mouseChildren= false;
+       nailAlmond5.shape = almondBig.clone().sca(.6).center(nailAlmond5);
+       nailAlmond5.shape.rotate = 0;
+       nailAlmond5.pattern = dots.clone().sca(.6).center(nailAlmond5).setMask(nailAlmond5.shape);
+
+      // create set of SQUARE
+      // const nailSquare1 = new Container().alp(0).place();
+      // nailSquare1.mouseChildren = false;
+      // nailSquare1.shape = square.clone().sca(.5).center(nailSquare1);
+      // nailSquare1.pattern = dots.clone().sca(.5).center(nailSquare1).setMask(nailSquare1.shape);
+      //
+      // const nailSquare2 = new Container().alp(0).place();
+      // nailSquare2.mouseChildren= false;
+      // nailSquare2.shape = square.clone().sca(.6).rot(15).center(nailSquare2);
+      // nailSquare2.pattern = dots.clone().sca(.6).rot(15).center(nailSquare2).setMask(nailSquare2.shape);
+      //
+      // const nailSquare3 = new Container().alp(0).place();
+      // nailSquare3.mouseChildren= false;
+      // nailSquare3.shape = square.clone().sca(.68).rot(30).center(nailSquare3);
+      // nailSquare3.pattern = dots.clone().sca(.68).rot(30).center(nailSquare3).setMask(nailSquare3.shape);
+      //
+      // const nailSquare4 = new Container().alp(0).place();
+      // nailSquare4.mouseChildren = false;
+      // nailSquare4.shape = square.clone().sca(.6).center(nailSquare4);
+      // nailSquare4.pattern = dots.clone().sca(.6).center(nailSquare4).setMask(nailSquare4.shape);
+      //
+      // const nailSquare5 = new Container().alp(0).place();
+      // nailSquare5.mouseChildren= false;
+      // nailSquare5.shape = squareBig.clone().sca(.7).rot(38).center(nailSquare5);
+      // nailSquare5.pattern = dots.clone().sca(.7).rot(38).center(nailSquare5).setMask(nailSquare5.shape);
+      //
+      //
+      // // define position
+      // nailSquare1.loc(608, 226).animate({alpha:1});
+      // nailSquare2.loc(676, 344).animate({alpha:1});
+      // nailSquare3.loc(711, 460).animate({alpha:1});
+      // nailSquare4.loc(644, 553).animate({alpha:1});
+      // nailSquare5.loc(200, 601).animate({alpha:1});
+
+    // do this when pick a new color
+       timeout(2, () => {
+         const swatch = swatches.items[0]
+         swatch.pattern.dispose();
+         swatch.pattern = makePattern("stripes", series(yellow, yellow), 10, 10, 10).sca(.5).center(swatch).setMask(swatch.shape);
+         S.update();
+
+       })
+
+        // define position
+        nailAlmond1.loc(608, 226).animate({alpha:1});
+        nailAlmond2.loc(676, 344).animate({alpha:1});
+        nailAlmond3.loc(711, 460).animate({alpha:1});
+        nailAlmond4.loc(644, 553).animate({alpha:1});
+        nailAlmond5.loc(200, 601).animate({alpha:1});
+
+
+        // make pattern panel
+        const patternPanel = new Rectangle({
+            color: "#F0E1D6",
+            width: 220,
+            height: 800,
+        }).pos(0, 0, RIGHT, CENTER);
+
+        new Label({
+            text: "drag to nail",
+            align: CENTER
+        })
+            .sca(.7)
+            .alp(.7)
+            .centerReg()
+            .pos(0, 350, CENTER, TOP, patternPanel);
+
+        new Label({
+            text: "change shape",
+            align: CENTER
+        })
+            .sca(.7)
+            .alp(.7)
+            .centerReg()
+            .pos(0, 170, CENTER, BOTTOM, patternPanel);
+
+
+        //change shape function
+        const shape1= new Pic("almond.png").reg(CENTER).expand(0);
+        shape1.blob = almond;
+        shape1.blobBig = almondBig;
+
+        const shape2= new Pic("square.png").reg(CENTER).expand(0);
+        shape2.blob = square;
+        shape2.blobBig = squareBig; // change to squareBig later
+        STYLE = {valign: BOTTOM};
+        const tile = new Tile ([shape1, shape2], 2, 1, 30, 30, true);
+
+        STYLE = {};
+        const shapes = new Selector (tile).pos(50,50,RIGHT, BOTTOM)
+        .change(e=>{
+          // zog(shapes.currentItem.blob)
+          loop(5, i => {
+            let count = i + 1;
+            // get the variable by the string
+            let nailAlmond = eval("nailAlmond" + count);
+            let sca = nailAlmond.shape.scale;
+            let rot = nailAlmond.shape.rotate;
+            nailAlmond.shape.dispose();
+            let blob = shapes.currentItem.blob;
+            if (count === 5) {
+              // the fifth one is special
+              blob = shapes.currentItem.blobBig;
+            }
+            nailAlmond.shape = blob.clone().rot(rot).sca(sca).center(nailAlmond);
+            // record the rotation again after the shape dispose
+            nailAlmond.shape.rotate = rot;
+            nailAlmond.pattern.setMask(nailAlmond.shape).top();
+          });
+          // let sca= nailAlmond1.shape.scale
+          // let rot=nailAlmond1.shape.rotate
+          // nailAlmond1.shape.dispose();
+          // // nail1.pattern.dispose();
+          // nailAlmond1.shape = shapes.currentItem.blob.clone().sca(sca).rot(rot).center(nailAlmond1);
+          // nailAlmond1.pattern.setMask(nailAlmond1.shape).top();
+        });
+
+        // let current;
+        // nail.on("mousedown", (e)=>{
+        //   current = e.target;
+        //   current.copy = current.clone()
+        //   .addTo()
+        //   .drag();
+        // })
+
+        const swatches = new Tile (nailArray, 2, 8, 20, 20, true).pos(50, 50, RIGHT, TOP).drag();
+        swatches.loop((swatch, i) => {
+            swatch.startX = swatch.x;
+            swatch.startY = swatch.y;
+            swatch.count = i;
+        });
+
+        swatches.removeAllEventListeners("pressup");
+
+        swatches.on("pressup", (e) => {
+          const swatch = e.target;
+          if (nailAlmond1.hitTestCircle(swatch)){
+            changeNail(swatch, nailAlmond1);
+          } else if(nailAlmond2.hitTestCircle(swatch)){
+            changeNail(swatch, nailAlmond2);
+          } else if(nailAlmond3.hitTestCircle(swatch)){
+            changeNail(swatch, nailAlmond3);
+          } else if(nailAlmond4.hitTestCircle(swatch)){
+            changeNail(swatch, nailAlmond4);
+          } else if(nailAlmond5.hitTestCircle(swatch)){
+            changeNail(swatch, nailAlmond5);
+          }
+          // put the swatch back
+          swatch.loc(swatch.startX, swatch.startY).alp(0).animate({alpha: 1});
+          stage.update();
+        })
+
+        function changeNail(swatch, nail){
+          nail.pattern.dispose();
+          nail.pattern = swatch.pattern.clone().center(nail).setMask(nail.shape);
+          S.update();
+        }
+
+
+
+
+
+
+
+      }
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
